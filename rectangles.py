@@ -1,9 +1,4 @@
-# make the canvas a string that prints? 
-# the canvas will be 10x10 characters 
-# do not allow for cahracters that are out of bounds 
-
-# char is the character to draw the outside of the rectangle with 
-# fill_char is the character 
+# DO NOT ALLOW FOR CHARACTERS TO BE OUT OF BOUNDS
 
 class Canvas: 
     
@@ -49,6 +44,13 @@ class Rectangle:
 
     def char(self, fill_char):
         self.fill_char = fill_char
+    
+    def translate(self, axis, num):
+        """Translate the rectangle, axis can either be 'x' or 'y'
+        Translating on x will move it left or right,
+        tranlating on y will move it up or down."""
+
+        pass
         
     def __repr__(self):
         return f'<Rectangle start=({self.start_x}, {self.start_y}) end=({self.end_x}, {self.end_y}) fill_char={self.fill_char}>'
@@ -59,7 +61,11 @@ class Rectangle:
 
 canvas1 = Canvas()
 canvas1.print_canvas()
-rectangle1 = Rectangle(5,4,3,2,"-")
+rectangle1 = Rectangle(5,4,3,2,".")
 print("*****")
 canvas1.add_rectangle(rectangle1)
+canvas1.print_canvas()
+print("*****")
+rectange2 = Rectangle(7,8,5,6,"+")
+canvas1.add_rectangle(rectange2)
 canvas1.print_canvas()
